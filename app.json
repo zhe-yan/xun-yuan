@@ -7,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffe",
-    "navigationBarTitleText": "寻缘",
+    "navigationBarTitleText": "寻缘小程序",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
