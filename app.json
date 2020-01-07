@@ -6,7 +6,11 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
+<<<<<<< HEAD
     "navigationBarBackgroundColor": "#ffe",
+=======
+    "navigationBarBackgroundColor": "#eee",
+>>>>>>> master
     "navigationBarTitleText": "寻缘",
     "navigationBarTextStyle": "black"
   },
