@@ -3,11 +3,25 @@
 const app = getApp()
 
 Page({
+  onShareAppMessage() {
+    return {
+      title: 'swiper',
+      path: 'page/component/pages/swiper/swiper'
+    }
+  },
+
   data: {
     motto: '寻缘 微信首页',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+
+    carouselList: ['../../res/app-date.png', '../../res/app-marry.png', '../../res/app-meet.png'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +30,11 @@ Page({
     })
   },
   onLoad: function () {
+    wx.getStorageInfo({
+      success: function(res) {
+        console.log(localStorage)
+      },
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
