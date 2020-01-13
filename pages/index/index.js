@@ -24,16 +24,15 @@ Page({
     duration: 500
   },
   //事件处理函数
-  bindViewTap: function() {
+  login: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../login/login'
     })
   },
   onLoad: function () {
-    wx.getStorageInfo({
-      success: function(res) {
-        console.log(localStorage)
-      },
+    
+    wx.navigateTo({
+      url: '../login/login'
     })
     if (app.globalData.userInfo) {
       this.setData({

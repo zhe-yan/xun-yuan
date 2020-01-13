@@ -1,2 +1,43 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<!--login.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{carouselList}}" wx:key="*this">
+          <swiper-item>
+            <image class="carouselImg" src="{{item}}" mode='aspectFill'></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+
+            <mp-cells title="登录" footer="">
+                <mp-cell prop="username" title="用户名" ext-class="">
+                    <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入用户名"/>
+                </mp-cell>
+                <mp-cell prop="password" title="密码" ext-class="">
+                    <input bindinput="formInputChange" password="true" data-field="mobile" class="weui-input" placeholder="请输入密码"/>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+
+        <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>
+                </view>
+            </label>
+        </checkbox-group>
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">确定</button>
+        </view>
+    </view>
+  </view>
+</view>

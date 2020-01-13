@@ -9,7 +9,10 @@
           </swiper-item>
         </block>
       </swiper>
+    </view>
 
+    <view class="test" bindtap="login">
+          test
     </view>
   </view>
 </view>
