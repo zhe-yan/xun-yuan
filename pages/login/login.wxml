@@ -12,13 +12,12 @@
     </view>
     <view class="page__bd">
         <mp-form id="form" rules="{{rules}}" models="{{formData}}">
-
             <mp-cells title="登录" footer="">
                 <mp-cell prop="username" title="用户名" ext-class="">
-                    <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入用户名"/>
+                    <input bindinput="formInputChange" data-field="username" class="weui-input" placeholder="请输入用户名"/>
                 </mp-cell>
                 <mp-cell prop="password" title="密码" ext-class="">
-                    <input bindinput="formInputChange" password="true" data-field="mobile" class="weui-input" placeholder="请输入密码"/>
+                    <input bindinput="formInputChange" password="true" data-field="password" class="weui-input" placeholder="请输入密码"/>
                 </mp-cell>
             </mp-cells>
         </mp-form>
