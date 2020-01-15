@@ -31,7 +31,7 @@ var tetris = {
     */
     getString: function (key, nullReturn) {
       try {
-        var value = wx.getStorageSync('key')
+        var value = wx.getStorageSync(key)
         if (value == null && nullReturn != undefined)
           return nullReturn;
         else
@@ -720,6 +720,9 @@ systemEnums : {
       return names['k' + statusValue] == undefined ? "未知" : names['k' + statusValue];
     },
   },
+
+
+  
 }
 
 

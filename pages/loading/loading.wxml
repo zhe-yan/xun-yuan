@@ -1,0 +1,13 @@
+<!--pages/loading/loading.wxml-->
+<view class="container">
+  <view class="logo">
+    <image class="logoimg" src="../../res/xun-yuan.png"></image>
+    <text>. 勇敢爱 .</text>
+    <view class="blink">
+      <text class="event listening">正在加载...</text>
+      <text class="event received">加载完毕</text>
+    </view>
+  </view>
+  
+  
+</view>
