@@ -1,5 +1,7 @@
 // pages/login/login.js
-var tetris = require("../../module/tetris").tetris
+var tetris = require("../../module/tetris").tetris;
+var ajax = require("../../module/ajax").ajax;
+
 Component({
     data: {
 
@@ -82,9 +84,10 @@ Component({
                 console.log(self.data)
 
             })
-            wx.request({
-                url: 'http://localhost:65435/MAPI/Account/Authorization',
-                data: {
+
+            ajax.getData({
+                url:"../MAPI/Account/Authorization",
+                postdata: {
                     Action: 'signin',
                     LoginName: self.data.formData.username,
                     LoginPassword: self.data.formData.password,
@@ -92,7 +95,6 @@ Component({
                     LoginDeviceType: 9,
                     LoginIP: "192.168.0.194"
                 },
-                method: 'POST',
                 success: function (res) {
                     console.log(res.data)
                     if (res.data.type == "success") {
@@ -128,9 +130,6 @@ Component({
                     } else {
                         //$("#lm-login-msg").html(SignIn.message);
                     }
-                },
-                fail: function (data) {
-                    console.log(data)
                 }
             })
         }

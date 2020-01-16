@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/login/login",
     "pages/loading/loading",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +21,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/my/my",
         "text": "我的"
       }
     ]
