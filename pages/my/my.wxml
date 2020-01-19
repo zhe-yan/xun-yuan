@@ -1,19 +1,26 @@
 <!--pages/my/my.wxml-->
+<view class="avatarbox">
+  <view class="headphoto">
+    <image src="{{useravatar}}" mode="widthFix"></image>
+  </view>
+  <view class="info">
+    <view>{{vubi.NickName}}</view>
+    
+    <view>Id:{{vubi.UserId}}</view>
+    <view>[{{vubi.DatingStatusName}}]</view>
+  </view>
+  <view class="qrc">
+    <image src="../../res/qr-code.png" mode="widthFix"></image>
+  </view>
+</view>
+
 <view class="weui-grids">
-  <view class="weui-grid">
+
+  <block wx:for="{{function}}">
+  <view class="weui-grid my-grid">
     <mp-icon icon="add" color="black" size="{{25}}"></mp-icon>
-    <view class="weui-grid__label">22</view>
+    <view class="weui-grid__label">{{item}}</view>
+  
   </view>
-  <view class="weui-grid">
-    <view class="weui-grid__icon"></view>
-    <view class="weui-grid__label">22</view>
-  </view>
-  <view class="weui-grid">
-    <view class="weui-grid__icon"></view>
-    <view class="weui-grid__label">22</view>
-  </view>
-  <view class="weui-grid">
-    <view class="weui-grid__icon"></view>
-    <view class="weui-grid__label">22</view>
-  </view>
+  </block>
 </view>

@@ -1,3 +1,55 @@
 /* pages/my/my.wxss */
 
 @import "../../components/style/weui.wxss";
+
+.my-grid{
+  text-align: center;
+}
+
+.avatarbox{
+  height: 200px;
+}
+
+.headphoto{
+  float: left;
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.headphoto > image {
+  width: 100%;
+}
+
+.info{
+  float: left;
+  width: 45%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.info > image {
+  width: 100%;
+  height: 100%;
+}
+
+.qrc{
+  float: left;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px;
+  border-radius: 3px;
+}
+
+.qrc > image {
+  width: 100%;
+  height: 100%;
+}
+
+.clear{
+  clear:both;
+}
