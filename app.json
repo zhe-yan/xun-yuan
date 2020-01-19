@@ -4,6 +4,7 @@
     "pages/login/login",
     "pages/loading/loading",
     "pages/logs/logs",
+    "pages/search/search",
     "pages/my/my"
   ],
   "window": {
@@ -18,13 +19,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "./res/globe_24px.png",
+        "selectedIconPath": "./res/globe_24px.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "./res/search_24px.png",
+        "selectedIconPath": "./res/search_24px.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "./res/user_24px.png",
+        "selectedIconPath": "./res/user_24px.png"
       }
     ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
