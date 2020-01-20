@@ -93,7 +93,7 @@ Component({
                     LoginPassword: self.data.formData.password,
                     LoginLocation: "chongqing",
                     LoginDeviceType: 9,
-                    LoginIP: "192.168.0.194"
+                    LoginIP: "192.168.0.194" 
                 },
                 success: function (res) {
                     console.log(res.data)

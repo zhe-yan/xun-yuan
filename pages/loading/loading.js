@@ -1,5 +1,8 @@
 // pages/loading/loading.js
 var tetris = require("../../module/tetris").tetris;
+var ajax = require("../../module/ajax").ajax;
+
+
 
 Page({
 
@@ -27,17 +30,13 @@ Page({
         url: '../login/login',
       })
     } else {
-      wx.request({
-        url: 'http://localhost:65435/MAPI/Account/Authorization',
-        data: {
+      ajax.getData({
+        url:"../MAPI/Account/Authorization",
+        postdata: {
           Action: 'syncUserInfo',
-          ExternalToken: self.data.ExternalToken
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
         },
         success: function (result) {
+          console.log(result)
           if (result.data.type == "success") {
             self.setData({
               vubi: result.data.returnobject,
@@ -66,7 +65,7 @@ Page({
             })
           }
         }
-      })
+    })
     }
 
   },
@@ -82,11 +81,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.hideHomeButton({
-      complete: (res) => {
-        console.log(33)
-      },
-    })
+    
   },
 
   /**

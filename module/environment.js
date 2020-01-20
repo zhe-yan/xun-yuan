@@ -8,7 +8,7 @@ var environment = {
     timeout: 100000,                //100秒
   },
   api: {
-    MainSite: "http://192.168.0.105:65435",
+    MainSite: "http://localhost:65435",
     MallSite: "http://localhost:28459",
   },
   chat: {

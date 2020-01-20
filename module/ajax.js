@@ -83,13 +83,16 @@ var ajax = {
   getData: function (option) {
     option.postdata["ExternalToken"] = storageTool.getString("redisUser_ExternalToken");
     if (option.postdata["UserId"] == undefined && storageTool.getString("vubi") != undefined) {
-      option.postdata["UserId"] = V_VUBI.UserId;
+      option.postdata["UserId"] = storageTool.getString("vubi").UserId;
     }
     wx.request({
       method: ajaxglobal.type,
       timeout: ajaxglobal.timeout,
       url: getAjaxApiPath(option.url),
       data: clearHtmlTags(option.postdata), //要发送的数据
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
       success: option.success,
       complete: ajaxglobal.complete,
       error: ajaxglobal.error
