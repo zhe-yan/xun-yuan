@@ -1,0 +1,36 @@
+<!--pages/searchcondition/searchcondition.wxml-->
+<view class="container">
+	<view class="page-body">
+
+		<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__bd">
+				<view class="weui-cells__title">搜索条件</view>
+				<view class="weui-cells weui-cells_after-title">
+					<view class="weui-cell ">
+						<view class="weui-cell__hd">
+							<view class="weui-label">婚姻状况</view>
+						</view>
+						<view class="weui-cell__bd">
+							<picker bindchange="marriageChange" value="{{marriageValue - 1}}" range="{{marriage}}">
+								<view class="weui-input">{{marriage[marriageValue - 1]}}</view>
+							</picker>
+						</view>
+					</view>
+          <view class="weui-cell ">
+						<view class="weui-cell__hd">
+							<view class="weui-label">居住地</view>
+						</view>
+						<view class="weui-cell__bd">
+							<picker bindchange="placeChange" mode="region" value="{{liveplaceValue}}">
+								<view class="weui-input">{{liveplaceValue}}</view>
+							</picker>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view style="padding:5px">
+			<button class="weui-btn" type="primary" bindtap="search">保存条件</button>
+		</view>
+	</view>
+</view>

@@ -81,6 +81,10 @@ var ajaxglobal = {
 
 var ajax = {
   getData: function (option) {
+    var header = "application/x-www-form-urlencoded"
+    if (option.header == undefined){
+      option.header = header;
+    }
     option.postdata["ExternalToken"] = storageTool.getString("redisUser_ExternalToken");
     if (option.postdata["UserId"] == undefined && storageTool.getString("vubi") != undefined) {
       option.postdata["UserId"] = storageTool.getString("vubi").UserId;
@@ -91,7 +95,7 @@ var ajax = {
       url: getAjaxApiPath(option.url),
       data: clearHtmlTags(option.postdata), //要发送的数据
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': option.header
       },
       success: option.success,
       complete: ajaxglobal.complete,

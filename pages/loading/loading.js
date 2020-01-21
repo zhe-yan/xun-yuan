@@ -36,7 +36,6 @@ Page({
           Action: 'syncUserInfo',
         },
         success: function (result) {
-          console.log(result)
           if (result.data.type == "success") {
             self.setData({
               vubi: result.data.returnobject,

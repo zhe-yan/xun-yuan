@@ -1,0 +1,40 @@
+/* pages/info/info.wxss */
+@import "../../components/style/weui.wxss";
+
+.page-body{
+  width: 100%;
+}
+
+.headphoto{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.weui-panel__bd{
+  padding-top: 10px;
+}
+
+.tcenter{
+  text-align: center;
+}
+
+.fleft{
+  float: left;
+}
+
+.fright{
+  float: right;
+}
+
+.panel{
+  width: 100%;
+}
+
+.block{
+  height: 40px;
+  width: 100%;
+  text-align: left;
+  padding-left: 10px;
+  line-height: unset;
+}

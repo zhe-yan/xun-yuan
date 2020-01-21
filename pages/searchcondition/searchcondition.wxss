@@ -1,4 +1,4 @@
-/* pages/search/search.wxss */
+/* pages/searchcondition/searchcondition.wxss */
 
 @import "../../components/style/weui.wxss";
 

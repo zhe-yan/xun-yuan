@@ -1,18 +1,37 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="page-body">
-    <view class="page-section page-section-spacing swiper">
-      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{carouselList}}" wx:key="*this">
-          <swiper-item>
-            <image class="carouselImg" src="{{item}}" mode='aspectFill'></image>
-          </swiper-item>
-        </block>
-      </swiper>
-    </view>
+	<view class="page-body">
+		<view class="page-section page-section-spacing swiper">
+			<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+				<block wx:for="{{carouselList}}" wx:key="*this">
+					<swiper-item>
+						<image class="carouselImg" src="{{item}}" mode='aspectFill'></image>
+					</swiper-item>
+				</block>
+			</swiper>
+		</view>
 
-    <view class="test" bindtap="login">
-          test
-    </view>
-  </view>
+		<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">今日推荐</view>
+			<view class="weui-panel__bd">
+				<block wx:for="{{Recommendations}}">
+					<navigator url="../info/info?userid={{item.UserId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+						<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+							<image class="weui-media-box__thumb" src="{{item.HeadPhoto}}" />
+						</view>
+						<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+							<view class="weui-media-box__title">{{item.NickName}}</view>
+							<view class="weui-media-box__desc">{{item.LivePlaceProvince}}  {{item.LivePlaceCity}}  {{item.LivePlaceCountry}}</view>
+						</view>
+					</navigator>
+				</block>
+
+			</view>
+			<view class="weui-panel__ft">
+				<view class="weui-cell weui-cell_access weui-cell_link" bindtap="getRecommendation">
+					<view class="weui-cell__bd" style="text-align:center">换一批</view>
+				</view>
+			</view>
+		</view>
+	</view>
 </view>

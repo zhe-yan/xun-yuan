@@ -5,13 +5,16 @@
     "pages/loading/loading",
     "pages/logs/logs",
     "pages/search/search",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/searchcondition/searchcondition",
+    "pages/info/info"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#8666b8",
     "navigationBarTitleText": "寻缘小程序",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#EDEDED"
   },
   "tabBar": {
     "color": "#000000",

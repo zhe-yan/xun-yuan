@@ -1,2 +1,28 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="container">
+	<view class="page-body">
+		<view style="padding:5px">
+			<button class="weui-btn" type="primary" bindtap="condition">条件搜索</button>
+		</view>
+
+		<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">搜索结果</view>
+			<view class="weui-panel__bd">
+				<block wx:for="{{searchResult}}" wx:if="{{searchResult.length > 0}}">
+					<navigator url="../info/info?userid={{item.UserId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+						<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+							<image class="weui-media-box__thumb" src="{{item.HeadPhoto}}" />
+						</view>
+						<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+							<view class="weui-media-box__title">{{item.NickName}}</view>
+							<view class="weui-media-box__desc">{{item.LivePlaceProvince}} {{item.LivePlaceCity}} {{item.LivePlaceCountry}}</view>
+						</view>
+					</navigator>
+				</block>
+        <view wx:if="{{searchResult.length == 0}}" class="weui-media-box weui-media-box_appmsg">
+					<text>没有符合条件的用户</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

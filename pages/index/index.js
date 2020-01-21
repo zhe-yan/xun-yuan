@@ -1,20 +1,19 @@
 //index.js
 //获取应用实例
+var tetris = require("../../module/tetris").tetris;
+var ajax = require("../../module/ajax").ajax;
+
+
 const app = getApp()
 
 Page({
-  onShareAppMessage() {
-    return {
-      title: 'swiper',
-      path: 'page/component/pages/swiper/swiper'
-    }
-  },
 
   data: {
     motto: '寻缘 微信首页',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    Recommendations: [],
 
     carouselList: ['../../res/app-date.png', '../../res/app-marry.png', '../../res/app-meet.png'],
     indicatorDots: true,
@@ -24,12 +23,23 @@ Page({
     duration: 500
   },
   //事件处理函数
-  login: function() {
-    wx.navigateTo({
-      url: '../login/login'
-    })
+  getRecommendation: function(isFirst) {
+    var self = this;
+    var option = {
+      url: "../API/Service/VMatchService",
+      postdata: {
+          Action: "recommendation"
+      },
+      success: function (result) {
+        self.setData({
+          Recommendations : JSON.parse(result.data.list)
+        })
+      }
+    }
+    ajax.getData(option);
   },
   onLoad: function () {
+    this.getRecommendation(true)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

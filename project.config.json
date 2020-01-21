@@ -61,6 +61,14 @@
 					"id": -1,
 					"name": "pages/loading/loading",
 					"pathName": "pages/loading/loading",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "pages/info/info?userid=3084",
+					"pathName": "pages/info/info",
+					"query": "userid=3084",
 					"scene": null
 				}
 			]

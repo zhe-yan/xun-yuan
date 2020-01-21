@@ -1,0 +1,31 @@
+<!--pages/info/info.wxml-->
+<!--pages/search/search.wxml-->
+<view class="container">
+	<view class="page-body">
+		<view class="weui-panel weui-panel_access">
+			<view class="weui-panel__bd tcenter">
+				<image class="headphoto" src="{{BriefInfo.HeadPhoto}}"></image>
+			</view>
+      <view class="tcenter">{{BriefInfo.NickName}}</view>
+      <view class="tcenter">[{{BriefInfo.DatingStatusName}}]</view>
+		</view>
+    <view class="weui-panel weui-panel_access panel">
+				<view class="fleft">寻缘Id:{{BriefInfo.UserId}}</view>
+        <view class="fright">{{logintime}}</view>
+		</view>
+
+    <view class="weui-panel weui-panel_access">
+			<view class="weui-panel__hd">概要信息</view>
+			<view class="weui-panel__bd">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg block">
+          <view class="weui-badge" style="margin-left: 5px;">{{BriefInfo.MarriageStatusName}}</view>
+          <view class="weui-badge" style="margin-left: 5px;">{{BriefInfo.Height}}cm</view>
+          <view class="weui-badge" style="margin-left: 5px;">{{BriefInfo.Weight}}kg</view>
+          <view class="weui-badge" style="margin-left: 5px;">{{BriefInfo.CalcAge}}岁</view>
+          <view class="weui-badge" style="margin-left: 5px;">{{BriefInfo.AnnualIncomeName}}</view>
+        </view>
+			</view>
+		</view>
+
+	</view>
+</view>
